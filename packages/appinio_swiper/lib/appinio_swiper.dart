@@ -266,6 +266,7 @@ class _AppinioSwiperState extends State<AppinioSwiper>
     }
     newActivity.animation.addListener(() {
       _position.offset = newActivity.currentOffset;
+      widget.onCardPositionChanged?.call(_position);
       setState(() {});
     });
     widget.onSwipeBegin?.call(_position.index, targetIndex, newActivity);
